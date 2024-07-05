@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./estilos/clientes-form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Round&display=swap"
+        rel="stylesheet">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./img/logo.png" alt="logo" width="250px" class="logo">
+        <span class="logo">Codo a Codo Distribuidora</span>
+        <button type="button" onclick="window.location.href='./login.html'" class="btn-header">Back Office</button>
+
+    </header>
+    <div class="container">
+        <form enctype="multipart/form-data" method="post" class="form" id="form">
+            <fieldset class="field">
+                <legend>Alta de Cliente</legend>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" placeholder="ingrese apellido">
+                <br><br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="ingrese nombre">
+                <br><br>
+                <label for="cuit">Cuit/Cuil</label>
+                <input type="number" name="cuit" id="cuit_cuil" placeholder="ingrese cuit sin guiones">
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="mail" placeholder="ingrese e-mail">
+                <br><br>
+                <label for="telefono">Telefono:</label>
+                <input type="number" name="telefono" id="telefono" placeholder="telefono sin espacio">
+                <br><br>
+                <label for="direccion">Direccion:</label>
+                <input type="text" name="direccion" id="direccion" placeholder="ingrese direccion">
+                <br><br>
+                <div class="btn">
+                    <button type="submit" class="btn-enviar">Guardar</button>
+                    <button type="reset" class="btn-borrar">Borrar</button>
+                </div>
+                <br><br>
+            </fieldset>
+
+        </form>
+    </div>
+    <footer class="footer">
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+<!-- <script src="./alta_cliente.js"></script> -->
+<script>
+
+    const URL = "http://127.0.0.1:5000/"
+
+    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+    //const URL = "https://USUARIO.pythonanywhere.com/"
+
+
+    // Capturamos el evento de envío del formulario
+    document.getElementById('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitamos que se envie el form 
+
+        var formData = new FormData(this);
+
+        // Realizamos la solicitud POST al servidor
+        fetch(URL + 'clientes', { // fetcheamos a la URL http://http://127.0.0.1:5000/productos con el método POST (usamos la variable URL definida antes para poder colocar despues solo el nombre del decorador de la ruta en el servidor, en este caso productos)
+            method: 'POST',
+            body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+        })
+
+            //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
+            .then(function (response) {
+                if (response.ok) {
+                    //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                    return response.json();
+                } else {
+                    // Si hubo un error, lanzar explícitamente una excepción
+                    // para ser "catcheada" más adelante
+                    throw new Error('Error al cargar el cliente.');
+                }
+            })
+
+            //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+            .then(function (data) {
+                alert('Cliente cargado correctamente.');
+            })
+
+            // En caso de error, mostramos una alerta con un mensaje de error.
+            .catch(function (error) {
+                alert('Error al cagar el cliente.');
+            })
+
+            // Limpiar el formulario en ambos casos (éxito o error)
+            .finally(function () {
+                document.getElementById('apellido').value = "";
+                document.getElementById('nombre').value = "";
+                document.getElementById('cuit_cuil').value = "";
+                document.getElementById('telefono').value = "";
+                document.getElementById('mail').value = "";
+                document.getElementById('direccion').value = "";
+            });
+    })
+    </script>
+</body>
+
+</html>

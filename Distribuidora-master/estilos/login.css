@@ -1,0 +1,154 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* list-style: none; */
+    text-decoration: none;
+    
+}
+
+body {
+    font-family: "Nova Round", system-ui;
+    background: linear-gradient(grey, rgba(255, 255, 255, 0));
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+    width: 100%;
+    background: rgb(10, 10, 10);
+    color: white;
+    font-size: 25px;
+}
+.enlace a:hover{
+    color: red;
+    transform: translateY(-5px);
+
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    color: white;
+
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+    margin: 0%;
+    gap: 30px;
+    background: rgb(10, 10, 10);
+    font-size: 25px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 2);
+
+
+}
+
+.btn-enviar {
+    background: rgb(221, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+}
+
+.btn-borrar {
+    background: rgb(221, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+}
+
+.btn-borrar:hover {
+    transform: translateY(-5px);
+
+}
+
+.btn-enviar:hover {
+    transform: translateY(-5px);
+}
+a{
+    color: yellow;
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.copy{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    
+}
+@media(max-width: 800px){
+    .logo{
+        width: 140px;
+    }
+    .enlace a{
+        font-size: 17px;
+    }
+    .copy{
+        font-size: 17px;
+    }
+    .contain{
+        flex-direction: column;
+        max-width: 100%;
+
+    }
+    .btn{
+        flex-direction: row;
+        gap: 10px;
+        max-width: 100%;
+        margin: 0%;
+        padding: 0%;
+    
+
+    }
+    .btn-borrar, .btn-enviar{
+        font-size: 15px;
+        padding: 5px;
+        width: 100%;
+    }
+    .form{
+        font-size: 11px;
+        text-align: center;
+        padding: 0, 3, 0, 3;
+    }
+    .form a{
+        font-size: 15px;
+        text-align: center;
+    }
+    .form, input{
+        font-size: 10px;
+        text-align: center;
+    }
+
+}

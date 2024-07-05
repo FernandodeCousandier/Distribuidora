@@ -1,0 +1,154 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Nova Round", system-ui;
+}
+.container-fluid{    
+    background: linear-gradient(to right, black,white,yellow);
+    margin-top: 0%;
+}
+body{
+    background: linear-gradient(to right, black, rgb(240, 234, 234));
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.menu{
+
+    background: linear-gradient(to right, black, rgb(240, 234, 234));
+}
+.aside{
+    padding: 10%;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+}
+.aside::first-letter{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+}
+.transporte{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;   
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+}
+#transporte{
+    
+    color: white;
+}
+#bebidas{
+    
+    color: white;
+    padding-bottom: 20px;
+}
+.bebidas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+
+}
+.publicidad{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: space-around;
+    gap: 15px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+    
+}
+.publicidad img{
+    width: 100%;
+}
+.marcas{
+    text-align: center;
+    padding: 30px;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: "Nova Round", system-ui;
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+
+
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    background: linear-gradient(to right, rgb(121, 120, 120), rgb(240, 234, 234));
+    margin-top: 0%;
+    padding: 10%;
+    /* background: linear-gradient(rgb(236, 213, 213), rgb(221, 75, 75), rgb(231, 208, 76)); */
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+}
+.redes i {
+    font-size: 30px;
+}
+.direccion{
+    font-size: 20px;
+    font-weight: 600;
+
+
+}
+@media(max-width: 1080px){
+    .logo{
+        width: 100px;
+    }
+
+}
+@media(max-width: 700px){
+    .bebidas{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+
+
+    }
+    .transporte{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+    }
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+
+    }
+    .direccion{
+        text-align: center;
+    }
+
+}
