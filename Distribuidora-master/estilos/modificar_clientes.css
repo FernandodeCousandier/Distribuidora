@@ -1,0 +1,48 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+
+    font-family: "Nova Round", system-ui;
+    background: linear-gradient(to right, rgb(77, 75, 75), rgb(240, 234, 234));
+}
+
+.header {
+    background: linear-gradient(to right, rgb(77, 75, 75), rgb(240, 234, 234));
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2rem;
+    text-decoration: underline;
+
+}
+
+.btn-header {
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+
+}
+
+.btn-header:hover {
+    background: rgb(221, 75, 75);
+    color: white;
+    transform: translateY(-5px);
+    text-decoration: underline;
+}

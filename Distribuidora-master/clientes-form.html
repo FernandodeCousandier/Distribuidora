@@ -18,11 +18,11 @@
     <header class="header">
         <img src="./img/logo.png" alt="logo" width="250px" class="logo">
         <span class="logo">Codo a Codo Distribuidora</span>
-        <button type="button" onclick="window.location.href='./login.html'" class="btn-header">Back Office</button>
+        <button type="button" onclick="window.location.href='./menu_clientes.html'" class="btn-header">Back Office</button>
 
     </header>
     <div class="container">
-        <form enctype="multipart/form-data" method="post" class="form" id="form">
+        <form enctype="multipart/form-data" class="form" id="form">
             <fieldset class="field">
                 <legend>Alta de Cliente</legend>
 
@@ -32,11 +32,11 @@
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" placeholder="ingrese nombre">
                 <br><br>
-                <label for="cuit">Cuit/Cuil</label>
-                <input type="number" name="cuit" id="cuit_cuil" placeholder="ingrese cuit sin guiones">
+                <label for="cuit_cuil">Cuit/Cuil</label>
+                <input type="number" name="cuit_cuil" id="cuit_cuil" placeholder="ingrese cuit sin guiones">
                 <br><br>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="mail" placeholder="ingrese e-mail">
+                <label for="mail">Email:</label>
+                <input type="email" name="mail" id="mail" placeholder="ingrese e-mail">
                 <br><br>
                 <label for="telefono">Telefono:</label>
                 <input type="number" name="telefono" id="telefono" placeholder="telefono sin espacio">
@@ -97,6 +97,7 @@
             // En caso de error, mostramos una alerta con un mensaje de error.
             .catch(function (error) {
                 alert('Error al cagar el cliente.');
+                console.log(data);
             })
 
             // Limpiar el formulario en ambos casos (éxito o error)
