@@ -50,8 +50,44 @@ body {
     display: flex;
     justify-content: center;
 }
-.tabla{
-    display: flex;
-    justify-content: center;
-    padding-top:30px;
+.tabla {
+    font-size: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #a7a4bb;
+    border: 1px solid lightslategray;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.tabla th{
+    text-align: center;
+    padding: 20px;
+}
+.tabla td .btn{
+    background-color: aqua;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.tabla td{
+    text-align: center;
+    padding: 5px 20px;
+}
+#marquee{
+    font-size: 30px;
+    font-weight: 500;
+}
+.tabla td .btn:hover{
+    background-color: red;
+    color: white;
+    transition: .5s;
+}
+#index{
+    font-size: 25px;
+    font-weight: 500;
+    color: blueviolet;
+}
+#index:hover{
+    color: red;
+    text-decoration: underline;
+    transition: .5s;
 }

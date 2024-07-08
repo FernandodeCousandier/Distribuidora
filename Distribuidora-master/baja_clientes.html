@@ -32,7 +32,7 @@
     <marquee behavior="alternate" direction="right" id="marquee">
         Bienvenido al sistema baja de clientes 👩👨👴😎.
     </marquee>
-    <table id="clientes-tabla"> <!-- Se crea una tabla para mostrar los productos. -->
+    <table id="clientes-tabla"  class="tabla" cellspacing="25"> <!-- Se crea una tabla para mostrar los productos. -->
         <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
             <tr>
                 <th>ID</th>
@@ -71,13 +71,13 @@
                         console.log('alofs', data);
                         row.innerHTML = `
                             <td>${clientes.id}</td>
-                            <td>${clientes.apellido}</td>
-                            <td>${clientes.nombre}</td>
-                            <td>${clientes.cuit_cuil}</td>
-                            <td>${clientes.mail}</td>
-                            <td>${clientes.telefono}</td>
-                            <td>${clientes.direccion}</td>
-                            <td><button onclick="eliminar_clientes('${clientes.id}')">Eliminar</button></td>
+                            <td aling="left">${clientes.apellido}</td>
+                            <td aling="left">${clientes.nombre}</td>
+                            <td aling="left">${clientes.cuit_cuil}</td>
+                            <td aling="left">${clientes.mail}</td>
+                            <td aling="left">${clientes.telefono}</td>
+                            <td aling="left">${clientes.direccion}</td>
+                            <td><button class="btn" onclick="eliminar_clientes('${clientes.id}')">Eliminar</button></td>
                         `;
                     });
                 })

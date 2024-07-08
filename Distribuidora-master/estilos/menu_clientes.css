@@ -6,7 +6,6 @@
     text-decoration: none;
     font-family: "Salsa", cursive;
 }
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -14,61 +13,51 @@
     background-image: linear-gradient(to right, #000000, #808080);
     color: white;
 }
-
 .header h1 {
     font-size: 50px;
     padding: 2px 5px 2px 5px;
 }
-
 .header a {
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 50px;
     font-size: 25px;
+    color: rgb(183, 148, 217);
 }
-
 .header a:hover {
     color: rgb(200, 202, 221);
-    transition: 0.9s;
-
+    text-decoration: underline;
+    transition: 0.5s;
 }
-
-
 #marquee {
     font-size: 25px;
     background-color: rgb(234, 243, 243);
-
 }
-
 .contenedor {
     background-image: linear-gradient(to right, #000000, #808080);
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 .alta, .baja, .consulta, .modificar{
     list-style: none;
     text-decoration: none;
     color: white;
 }
-
 .btn {
     background-color: #f3ecec;
 }
-
 .btn button {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     margin: 20px;
     padding: 10px;
-    border: 10px dotted #f3ecec;
+    border: 3px solid #f3ecec;
     border-radius: 10px;
     background-color: rgb(10, 10, 10);
     font-size: 20px;
     font-weight: 800;
-    transition: 0.9s;
+    transition: 0.5s;
     color: white;
 
 
@@ -80,7 +69,7 @@
 #modificar:hover {
     transform: translateY(-5px);
     background-color: white;    
-    border: 10px dotted #0c0c0c;
+    border: 3px solid #0c0c0c;
 
 }
 #alta a:hover,
@@ -120,7 +109,6 @@
 
 
 }
-
 @media(max-width: 768px) {
     #logo {
         width: 100px;

@@ -93,7 +93,7 @@ def mostrar_clientes(id):
     if clientes:
         return jsonify(clientes)
     else:
-        return "Producto no encontrado", 404
+        return "Cliente no encontrado", 404
 @app.route("/clientes", methods=['POST'])
 def agregar_clientes():
     apellido = request.form['apellido']
