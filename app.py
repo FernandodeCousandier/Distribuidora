@@ -80,7 +80,7 @@ class Clientes:
         self.connection.commit()
         return self.cursor.rowcount > 0
 
-clientedat=Clientes(host='Fernando75.mysql.pythonanywhere-services.com', user='Fernando75', password='sebastian1975',database='distribuidora')
+clientedat=Clientes(host='127.0.0.1', user='root', password='',database='distribuidora')
 
 @app.route("/clientes", methods=['GET'])
 def listar_clientes():
@@ -132,6 +132,3 @@ def eliminar_cliente(id):
 
 if __name__=="__main__":
     app.run(debug=True)
-
-
-
