@@ -79,8 +79,9 @@ class Clientes:
         self.cursor.execute(sql, valores)
         self.connection.commit()
         return self.cursor.rowcount > 0
-
-clientedat=Clientes(host='127.0.0.1', user='root', password='',database='distribuidora')
+    
+#clientedat=Clientes(host='127.0.0.1', user='root', password='', database='distribuidora')
+clientedat=Clientes(host='https://fernando75.pythonanywhere.com/', user='Fernando75', password='05061975@1975',database='Distribuidora')
 
 @app.route("/clientes", methods=['GET'])
 def listar_clientes():
