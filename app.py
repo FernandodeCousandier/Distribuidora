@@ -30,6 +30,7 @@ class Clientes:
             nombre VARCHAR(255) NOT NULL,
             cuit_cuil BIGINT(11) NOT NULL,
             telefono INT(10) NOT NULL,
+            mail VARCHAR(255) NOT NULL,
             domicilio VARCHAR (255) NOT NULL)''')
         self.connection.commit()
         
@@ -61,7 +62,7 @@ class Clientes:
             print("cliente no encontrado.")
     
     def agregar_cliente(self, apellido, nombre, cuit_cuil, telefono, mail, direccion): 
-        sql="INSERT INTO clientes (apellido, nombre, cuit_cuil, telefono, mail, direccion) VALUES(%s,%s,%s,%s,%s,%s)"
+        sql="INSERT INTO clientes (apellido, nombre, cuit_cuil, telefono, mail, domicilio) VALUES(%s,%s,%s,%s,%s,%s)"
         valores= (apellido, nombre, cuit_cuil, telefono, mail, direccion)
         self.cursor.execute(sql, valores)
         self.connection.commit()
@@ -73,7 +74,7 @@ class Clientes:
         return self.cursor.rowcount > 0
     
     def modificar_cliente(self, id, nuevo_apellido, nuevo_nombre, nuevo_cuit_cuil, nuevo_telefono, nuevo_mail, nueva_direccion):
-        sql = "UPDATE clientes SET apellido = %s, nombre = %s, cuit_cuil = %s, telefono = %s, mail = %s, direccion = %s WHERE id = %s"
+        sql = "UPDATE clientes SET apellido = %s, nombre = %s, cuit_cuil = %s, telefono = %s, mail = %s, domicilio = %s WHERE id = %s"
         valores = (nuevo_apellido, nuevo_nombre, nuevo_cuit_cuil, nuevo_telefono, nuevo_mail, nueva_direccion, id)
 
         self.cursor.execute(sql, valores)
@@ -81,7 +82,8 @@ class Clientes:
         return self.cursor.rowcount > 0
     
 #clientedat=Clientes(host='127.0.0.1', user='root', password='', database='distribuidora')
-clientedat=Clientes(host='https://fernando75.pythonanywhere.com/', user='Fernando75', password='05061975@1975',database='Distribuidora')
+#clientedat=Clientes(host='https://fernando75.pythonanywhere.com/', user='Fernando75', password='05061975@1975',database='Distribuidora')
+clientedat=Clientes(host='Fernando75.mysql.pythonanywhere-services.com', user='Fernando75', password='05061975@1975',database='Fernando75$Distribuidora')
 
 @app.route("/clientes", methods=['GET'])
 def listar_clientes():
